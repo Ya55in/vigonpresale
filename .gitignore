@@ -1,0 +1,36 @@
+node_modules
+.next
+dist
+.turbo
+.env
+.env.local
+.env*.local
+*.log
+.DS_Store
+coverage
+.vercel
+*.tsbuildinfo
+next-env.d.ts
+
+# Sortie du script d'essai d'offre
+offre-essai.pdf
+
+# Journaux du worker en service (launchd)
+logs/
+
+# Sauvegardes de `purger:bloquees` — elles portent le contenu intégral des
+# messages clients, adresses comprises. Jamais dans l'historique du dépôt.
+sauvegarde-demandes-bloquees-*.json
+
+# Documents personnels de stage : sans rapport avec le code, et sans place dans
+# un dépôt d'entreprise.
+rapport-de-stage/
+
+# Cahier des charges d'essai : produit par `npm run generer:cahier-charges`,
+# donc reproductible à l'identique. Un binaire versionné qui se régénère n'a
+# rien à faire dans l'historique.
+CDC-*.pdf
+
+# Outillage local de l'assistant de développement : configuration de poste,
+# sans rapport avec le produit.
+.claude/

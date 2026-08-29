@@ -1,0 +1,27 @@
+{
+  "name": "@vigon/extraction",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/adm-zip": "^0.5.7",
+    "@types/node": "^22.13.1",
+    "@types/pdf-parse": "^1.1.5",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@vigon/shared": "*",
+    "adm-zip": "^0.6.0",
+    "mammoth": "^1.9.0",
+    "pdf-parse": "^1.1.1",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
+  }
+}

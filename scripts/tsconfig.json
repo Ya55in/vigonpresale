@@ -1,0 +1,26 @@
+{
+  // Les scripts vivent à la racine, hors des workspaces : `npm run typecheck
+  // --workspaces` ne les voyait pas, et dix-neuf harnais de vérification
+  // n'étaient donc jamais typés. Un `d.id` sur un `number` y est passé sans
+  // bruit jusqu'à l'exécution.
+  //
+  // JSX activé : `generer-cahier-charges.tsx` compose un PDF avec
+  // @react-pdf/renderer.
+  //
+  // `@/*` est mappé sur `apps/web` pour qu'un harnais puisse exercer le code
+  // applicatif lui-même plutôt qu'une copie. Sans ce mappage, un essai sur
+  // `lireStoryline` aurait dû réécrire ses requêtes — et n'aurait alors vérifié
+  // que sa propre réécriture.
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "lib": ["ES2022", "DOM"],
+    "types": ["node"],
+    "baseUrl": "..",
+    "paths": {
+      "@/*": ["apps/web/*"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx", "**/*.mjs"]
+}
